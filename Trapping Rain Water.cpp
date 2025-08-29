@@ -1,3 +1,27 @@
+/*
+ * Trapping Rain Water Problem
+ * 
+ * Problem: Given an array representing heights of bars, calculate how much rainwater 
+ * can be trapped after it rains. Water can be trapped between bars if there are 
+ * higher bars on both sides.
+ * 
+ * Approach: Two pointers technique with left and right maximum tracking
+ * - Use two pointers (i, j) starting from both ends of the array
+ * - Maintain leftmax and rightmax to track maximum heights seen so far
+ * - Move the pointer with smaller height and calculate trapped water
+ * - Water trapped at position = min(leftmax, rightmax) - current_height
+ * 
+ * Time Complexity: O(n) where n is the array size
+ * Space Complexity: O(1) - only using constant extra space
+ * 
+ * Example: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+ * Output: 6 (units of trapped water)
+ */
+
+#include <vector>
+#include <algorithm>
+using namespace std;
+
 class Solution {
 public:
     int trap(vector<int>& height) {
